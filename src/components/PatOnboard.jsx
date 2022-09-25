@@ -19,11 +19,13 @@ function PatOnboard() {
     let navigate = useNavigate();
     let { user, setUser, token, setToken, refreshToken, setRefreshToken, logout, role, setRole } = useContext(UserContext);
     let [loading, setLoading] = useState(true);
-    let [timeSlots, setTimeSlots] = useState([]);
-    let [days, setDays] = useState([]);
+    let [conditions, setConditions] = useState([]);
+    let [lookingfor, setLookingfor] = useState([]);
 
-    const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-    const TIME_SLOTS = ["9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30",
+    const LOOK_FOR = ["Epidemiologist", "Podiatrist", "Audiologist", "General Practitioner", "Pediatrician",
+        "ENT Specialist", "OBGYN", "Oncologist", "Dentist", "Neonatologist", "Orthopedist", "Surgeon", "Neurologist", "Rheumatologist", "Geriatric Physician", "Urologist", "Gastroenterologist", "Dermatologist", "Endocrinologist", "Plastic surgeon", "Psychiatrist", "Anesthesiologist", "Nephrologist", "Radiologist","Cardiologist"];
+
+    const CONDS = ["9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30",
         "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30"];
 
     useEffect(() => {
@@ -38,39 +40,32 @@ function PatOnboard() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        let onboardDoc = {
+        let onboardPat = {
             email: "ahindra@mail.com",
-            time: timeSlots,
-            days: days,
-            qualification: data.get('qualification'),
-            speciality: data.get('speciality'),
-            hospital: data.get('hospital'),
-            experience: data.get('experience'),
-            fee: data.get('fee'),
-
-            age: 25,
-            gender: "Male",
-            conditions: ["Asthma"],
-            lookingfor: ["General Physician", "Endocrinologist"],
+            conditions: conditions,
+            lookingfor: lookingfor,
+            age: data.get('age'),
+            gender: data.get('gender'),
             city: data.get('city'),
             country: data.get('country'),
         };
-
-        await fetch("http://localhost:8000/patient/onboard", {
-            method: "POST",
-            headers: {
-                "Authorization": `Bearer ${token}`
-            },
-            body: onboardDoc,
-        })
-            .catch(error => {
-                window.alert(error);
-                return;
-            });
-        //console.log(days);
-        //console.log(timeSlots);
-        console.log("submit");
-        navigate("/doctor/appoints");
+        console.log(onboardPat);
+        /*
+                await fetch("http://localhost:8000/patient/onboard", {
+                    method: "POST",
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    },
+                    body: onboardDoc,
+                })
+                    .catch(error => {
+                        window.alert(error);
+                        return;
+                    });
+                //console.log();
+                console.log("submit");
+                navigate("/patient/appoints");
+                */
     };
 
     return (
@@ -107,7 +102,7 @@ function PatOnboard() {
                         <Grid item xs={6}>
                             <Autocomplete
                                 disablePortal
-                                options={["Male","Female","Others"]}
+                                options={["Male", "Female", "Others"]}
                                 getOptionLabel={(option) => option.toString()}
                                 sx={{ width: 400 }}
                                 renderInput={(params) => <TextField {...params}
@@ -134,18 +129,18 @@ function PatOnboard() {
                             <Autocomplete
                                 disablePortal
                                 multiple
-                                limitTags={3}
-                                options={TIME_SLOTS}
+                                limitTags={2}
+                                options={CONDS}
                                 getOptionLabel={(option) => option.toString()}
                                 sx={{ width: 400 }}
                                 renderInput={(params) => <TextField {...params}
                                     fullWidth
-                                    id="timeslots"
-                                    name="timeslots"
-                                    label="Time Slots (24hrs)" />}
+                                    id="conditions"
+                                    name="conditions"
+                                    label="Conditions" />}
                                 onChange={(event, newValue) => {
                                     //console.log(newValue);
-                                    setTimeSlots(newValue);
+                                    setConditions(newValue);
                                 }}
                             />
                         </Grid>
@@ -154,17 +149,17 @@ function PatOnboard() {
                                 disablePortal
                                 multiple
                                 limitTags={2}
-                                options={DAYS}
+                                options={LOOK_FOR}
                                 getOptionLabel={(option) => option.toString()}
                                 sx={{ width: 400 }}
                                 renderInput={(params) => <TextField {...params}
                                     fullWidth
-                                    id="days"
-                                    name="days"
-                                    label="Days Available" />}
+                                    id="lookingfor"
+                                    name="lookingfor"
+                                    label="Looking For" />}
                                 onChange={(event, newValue) => {
                                     //console.log(newValue);
-                                    setDays(newValue);
+                                    setLookingfor(newValue);
                                 }}
                             />
                         </Grid>

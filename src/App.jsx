@@ -6,6 +6,7 @@ import { UserContext } from './Contexts/UserContext';
 import { useState } from 'react';
 import Home from './components/Home';
 import DocOnboard from './components/DocOnboard';
+import PatOnboard from './components/PatOnboard';
 
 function App() {
   const goTo = useNavigate();
@@ -33,7 +34,7 @@ function App() {
           <Route path='/signup' element={<SignUp />} />
           <Route path='/login' element={<LogIn />} />
           <Route path='/doctor/onboard' element={<DocOnboard />} />
-          <Route path='/patient/onboard' element={<DocOnboard/>} />
+          <Route path='/patient/onboard' element={<PatOnboard/>} />
 
           <Route path='/patient/home' element={<Home />} />
           <Route path='/patient/home/:docID' element={<Home />} />

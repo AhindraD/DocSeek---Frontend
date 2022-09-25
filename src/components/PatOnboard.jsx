@@ -15,7 +15,7 @@ import { UserContext } from "../Contexts/UserContext";
 import axiosClient from '../ApiConfig';
 import { useNavigate } from 'react-router-dom';
 
-function DocOnboard() {
+function PatOnboard() {
     let navigate = useNavigate();
     let { user, setUser, token, setToken, refreshToken, setRefreshToken, logout, role, setRole } = useContext(UserContext);
     let [loading, setLoading] = useState(true);
@@ -47,11 +47,16 @@ function DocOnboard() {
             hospital: data.get('hospital'),
             experience: data.get('experience'),
             fee: data.get('fee'),
+
+            age: 25,
+            gender: "Male",
+            conditions: ["Asthma"],
+            lookingfor: ["General Physician", "Endocrinologist"],
             city: data.get('city'),
             country: data.get('country'),
         };
 
-        await fetch("http://localhost:8000/doctor/onboard", {
+        await fetch("http://localhost:8000/patient/onboard", {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${token}`
@@ -83,54 +88,13 @@ function DocOnboard() {
                             <TextField
                                 fullWidth
                                 color="success"
-                                id="qualification"
-                                label="Qualification"
-                                name="qualification"
-                                autoComplete="Qualification"
-                            />
-                        </Grid>
-                        <Grid item xs={6}>
-                            <TextField
-                                fullWidth
-                                color="success"
-                                name="speciality"
-                                label="Speciality"
-                                id="speciality"
-                                autoComplete="Speciality"
-                            />
-                        </Grid>
-                        <Grid item xs={6}>
-                            <TextField
-                                fullWidth
-                                color="success"
-                                id="hospital"
-                                label="Hospital"
-                                name="hospital"
-                                autoComplete="Hospital"
-                            />
-                        </Grid>
-                        <Grid item xs={6}>
-                            <TextField
-                                fullWidth
-                                color="success"
-                                type="number"
-                                name="experience"
-                                label="Experience"
-                                id="experience"
-                                autoComplete="Experience"
-                            />
-                        </Grid>
-                        <Grid item xs={4}>
-                            <TextField
-                                fullWidth
-                                color="success"
                                 id="city"
                                 label="City"
                                 name="city"
                                 autoComplete="City"
                             />
                         </Grid>
-                        <Grid item xs={4}>
+                        <Grid item xs={6}>
                             <TextField
                                 fullWidth
                                 color="success"
@@ -140,15 +104,30 @@ function DocOnboard() {
                                 autoComplete="Country"
                             />
                         </Grid>
-                        <Grid item xs={4}>
+                        <Grid item xs={6}>
+                            <Autocomplete
+                                disablePortal
+                                options={["Male","Female","Others"]}
+                                getOptionLabel={(option) => option.toString()}
+                                sx={{ width: 400 }}
+                                renderInput={(params) => <TextField {...params}
+                                    fullWidth
+                                    id="gender"
+                                    name="gender"
+                                    label="Gender"
+                                    autoComplete="Gender"
+                                />}
+                            />
+                        </Grid>
+                        <Grid item xs={6}>
                             <TextField
                                 fullWidth
                                 color="success"
                                 type="number"
-                                name="fee"
-                                label="Fees ($)"
-                                id="fee"
-                                autoComplete="Fee"
+                                name="age"
+                                label="Age"
+                                id="age"
+                                autoComplete="Age"
                             />
                         </Grid>
                         <Grid item xs={6}>
@@ -205,4 +184,4 @@ function DocOnboard() {
     )
 }
 
-export default DocOnboard;
+export default PatOnboard;

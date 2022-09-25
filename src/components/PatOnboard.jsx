@@ -23,10 +23,10 @@ function PatOnboard() {
     let [lookingfor, setLookingfor] = useState([]);
 
     const LOOK_FOR = ["Epidemiologist", "Podiatrist", "Audiologist", "General Practitioner", "Pediatrician",
-        "ENT Specialist", "OBGYN", "Oncologist", "Dentist", "Neonatologist", "Orthopedist", "Surgeon", "Neurologist", "Rheumatologist", "Geriatric Physician", "Urologist", "Gastroenterologist", "Dermatologist", "Endocrinologist", "Plastic surgeon", "Psychiatrist", "Anesthesiologist", "Nephrologist", "Radiologist","Cardiologist"];
+        "ENT Specialist", "OBGYN", "Oncologist", "Dentist", "Neonatologist", "Orthopedist", "Surgeon", "Neurologist", "Rheumatologist", "Geriatric Physician", "Urologist", "Gastroenterologist", "Dermatologist", "Endocrinologist", "Plastic surgeon", "Psychiatrist", "Anesthesiologist", "Nephrologist", "Radiologist", "Cardiologist"];
 
-    const CONDS = ["9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30",
-        "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30"];
+    const CONDS = ["Atherosclerosis", "Cardiomyopathy", "Atrial fibrillation", "Coronary heart disease", "Fatty liver", "Hepatitis", "Cirrhosis", "Chronic kidney disease", "Gallstones", "Polycystic kidney disease",
+        "Epilepsy", "Parkinson's disease", "Depression", "Alzheimer’s disease", "Dementia", "Schizophrenia", "Peptic ulcer", "Acidity", "Appendicitis", "Asthma", "Dyspepsia", "Allergic rhinitis", "Pneumonia", "Tuberculosis"];
 
     useEffect(() => {
         if (user == null) {
@@ -41,7 +41,7 @@ function PatOnboard() {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
         let onboardPat = {
-            email: "ahindra@mail.com",
+            email: "ahindra@mail.com",//user.email
             conditions: conditions,
             lookingfor: lookingfor,
             age: data.get('age'),
@@ -49,23 +49,21 @@ function PatOnboard() {
             city: data.get('city'),
             country: data.get('country'),
         };
-        console.log(onboardPat);
-        /*
-                await fetch("http://localhost:8000/patient/onboard", {
-                    method: "POST",
-                    headers: {
-                        "Authorization": `Bearer ${token}`
-                    },
-                    body: onboardDoc,
-                })
-                    .catch(error => {
-                        window.alert(error);
-                        return;
-                    });
-                //console.log();
-                console.log("submit");
-                navigate("/patient/appoints");
-                */
+        //console.log(onboardPat);
+
+        await fetch("http://localhost:8000/patient/onboard", {
+            method: "POST",
+            headers: {
+                "Authorization": `Bearer ${token}`
+            },
+            body: onboardDoc,
+        })
+            .catch(error => {
+                window.alert(error);
+                return;
+            });
+        console.log("submit");
+        navigate("/patient/home");
     };
 
     return (

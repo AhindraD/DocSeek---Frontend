@@ -20,6 +20,9 @@ function App() {
   // let [reportArr, setReportArr] = useState([]);
 
   function logout() {
+    setUser(null);
+    setToken(null);
+    setRefreshToken(null);
     localStorage.setItem("access_token", "");
     localStorage.setItem("refresh_token", "");
     localStorage.setItem("user_data", "");
@@ -41,8 +44,8 @@ function App() {
           <Route path='/patient/booknow' element={<Home />} />
           <Route path='/patient/appoints' element={<Home />} />
 
-          <Route path='/doctor/appoints' element={<Home />} />
-          <Route path='/doctor/appoints/:appointID' element={<Home />} />
+          <Route path='/doctor/home' element={<Home />} />
+          <Route path='/doctor/home/:appointID' element={<Home />} />
         </Routes>
       </div >
     </UserContext.Provider>

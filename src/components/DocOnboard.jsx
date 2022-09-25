@@ -39,7 +39,7 @@ function DocOnboard() {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
         let onboardDoc = {
-            email: "ahindra@mail.com",
+            email: "ahindra@mail.com",//user.email
             time: timeSlots,
             days: days,
             qualification: data.get('qualification'),
@@ -50,7 +50,7 @@ function DocOnboard() {
             city: data.get('city'),
             country: data.get('country'),
         };
-
+        //console.log(onboardDoc)
         await fetch("http://localhost:8000/doctor/onboard", {
             method: "POST",
             headers: {
@@ -65,7 +65,7 @@ function DocOnboard() {
         //console.log(days);
         //console.log(timeSlots);
         console.log("submit");
-        navigate("/doctor/appoints");
+        navigate("/doctor/home");
     };
 
     return (

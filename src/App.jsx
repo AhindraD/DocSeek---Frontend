@@ -5,12 +5,6 @@ import LogIn from './components/Login';
 import { UserContext } from './Contexts/UserContext';
 import { useState } from 'react';
 import Home from './components/Home';
-import Quiz from './components/Quiz';
-import StartGame from './components/StartGame';
-import JoinBatch from './components/JoinBatch';
-import GameOn from './components/GameOn';
-import DisplayQuiz from './components/DisplayQuiz';
-import Leaderboard from './components/Leaderboard';
 
 function App() {
   const goTo = useNavigate();
@@ -38,15 +32,15 @@ function App() {
           <Route path='/signup' element={<SignUp />} />
           <Route path='/login' element={<LogIn />} />
           <Route path='/doctor/onboard' element={<Home />} />
-          <Route path='/patient/onboard' element={<Quiz />} />
+          <Route path='/patient/onboard' element={<Home />} />
 
-          <Route path='/patient/home' element={<StartGame />} />
-          <Route path='/patient/home/:docID' element={<StartGame />} />
-          <Route path='/patient/booknow' element={<DisplayQuiz />} />
-          <Route path='/patient/appoints' element={<Leaderboard />} />
+          <Route path='/patient/home' element={<Home />} />
+          <Route path='/patient/home/:docID' element={<Home />} />
+          <Route path='/patient/booknow' element={<Home />} />
+          <Route path='/patient/appoints' element={<Home />} />
 
-          <Route path='/doctor/appoints' element={<JoinBatch />} />
-          <Route path='/doctor/appoints/:appointID' element={<GameOn />} />
+          <Route path='/doctor/appoints' element={<Home />} />
+          <Route path='/doctor/appoints/:appointID' element={<Home />} />
         </Routes>
       </div >
     </UserContext.Provider>

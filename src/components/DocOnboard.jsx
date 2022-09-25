@@ -6,16 +6,29 @@ import Box from '@mui/material/Box';
 import HealthAndSafetyTwoToneIcon from '@mui/icons-material/HealthAndSafetyTwoTone';
 import Typography from '@mui/material/Typography';
 import Autocomplete from '@mui/material/Autocomplete';
-
+import IconButton from '@mui/material/IconButton';
+import PhotoCamera from '@mui/icons-material/PhotoCamera';
+import Stack from '@mui/material/Stack';
 
 import React from 'react'
 import "../CSS/onboard.css"
-import { useEffect, useState, useContext } from 'react'
+import { useEffect, useState, useContext,useRef } from 'react'
 import { UserContext } from "../Contexts/UserContext";
 import axiosClient from '../ApiConfig';
 import { useNavigate } from 'react-router-dom';
 
 function DocOnboard() {
+    let [selectedImage, setSelectedImage] = useState();
+    let fileInputRef = useRef(null);
+    // This function will be triggered when the file field change
+    const imageChange = (e) => {
+        if (e.target.files && e.target.files.length > 0) {
+            setSelectedImage(e.target.files[0]);
+        }
+    };
+
+
+
     let navigate = useNavigate();
     let { user, setUser, token, setToken, refreshToken, setRefreshToken, logout, role, setRole } = useContext(UserContext);
     let [loading, setLoading] = useState(true);
@@ -49,8 +62,10 @@ function DocOnboard() {
             fee: data.get('fee'),
             city: data.get('city'),
             country: data.get('country'),
+            image: selectedImage,
         };
-        //console.log(onboardDoc)
+        console.log(onboardDoc)
+        /*
         await fetch("http://localhost:8000/doctor/onboard", {
             method: "POST",
             headers: {
@@ -66,6 +81,7 @@ function DocOnboard() {
         //console.log(timeSlots);
         console.log("submit");
         navigate("/doctor/home");
+        */
     };
 
     return (
@@ -78,6 +94,27 @@ function DocOnboard() {
                     Register Yourself
                 </Typography>
                 <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+                    <div style={styles.container}>
+                        <Stack direction="row" alignItems="center" spacing={1}>
+                            <Button variant="contained" component="label" color="success">
+                                Upload Image
+                                <input hidden accept="image/*" type="file" onChange={imageChange} id="image"/>
+                            </Button>
+                            <IconButton color="success" aria-label="upload picture" component="label">
+                                <input hidden accept="image/*" type="file" onChange={imageChange} id="image"/>
+                                <PhotoCamera />
+                            </IconButton>
+                        </Stack>
+                        {selectedImage && (
+                            <div style={styles.preview}>
+                                <img
+                                    src={URL.createObjectURL(selectedImage)}
+                                    style={styles.image}
+                                    alt="Thumb"
+                                />
+                            </div>
+                        )}
+                    </div>
                     <Grid container spacing={2}>
                         <Grid item xs={6}>
                             <TextField
@@ -206,3 +243,24 @@ function DocOnboard() {
 }
 
 export default DocOnboard;
+
+
+
+const styles = {
+    container: {
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        marginBottom: 15,
+    },
+    preview: {
+        marginTop: 5,
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    image: { maxWidth: "40%", maxHeight: 320, borderRadius: 5 },
+};

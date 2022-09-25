@@ -44,17 +44,17 @@ function DocOnboard() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        let newTrip = {
-            id: Math.random().toString(32).slice(2, 13),
-            title: data.get('title'),
-            desc: data.get('desc'),
-            start: data.get('start'),
-            end: data.get('end'),
-            //locations: autoVals.map((elem) => elem.place_name),
-            status: data.get('status'),
-        };
-        //console.log(autoVals);
-        //console.log("submit");
+        // let onboardDoc = {
+        //     title: data.get('title'),
+        //     desc: data.get('desc'),
+        //     start: data.get('start'),
+        //     end: data.get('end'),
+        //     //locations: autoVals.map((elem) => elem.place_name),
+        //     status: data.get('status'),
+        // };
+        console.log(days);
+        console.log(timeSlots);
+        console.log("submit");
     };
 
     return (
@@ -70,7 +70,6 @@ function DocOnboard() {
                     <Grid container spacing={2}>
                         <Grid item xs={6}>
                             <TextField
-                                required
                                 fullWidth
                                 color="success"
                                 id="qualification"
@@ -81,7 +80,6 @@ function DocOnboard() {
                         </Grid>
                         <Grid item xs={6}>
                             <TextField
-                                required
                                 fullWidth
                                 color="success"
                                 name="speciality"
@@ -92,7 +90,6 @@ function DocOnboard() {
                         </Grid>
                         <Grid item xs={6}>
                             <TextField
-                                required
                                 fullWidth
                                 color="success"
                                 id="hospital"
@@ -103,7 +100,6 @@ function DocOnboard() {
                         </Grid>
                         <Grid item xs={6}>
                             <TextField
-                                required
                                 fullWidth
                                 color="success"
                                 type="number"
@@ -115,7 +111,6 @@ function DocOnboard() {
                         </Grid>
                         <Grid item xs={4}>
                             <TextField
-                                required
                                 fullWidth
                                 color="success"
                                 id="city"
@@ -126,7 +121,6 @@ function DocOnboard() {
                         </Grid>
                         <Grid item xs={4}>
                             <TextField
-                                required
                                 fullWidth
                                 color="success"
                                 name="country"
@@ -137,7 +131,6 @@ function DocOnboard() {
                         </Grid>
                         <Grid item xs={4}>
                             <TextField
-                                required
                                 fullWidth
                                 color="success"
                                 type="number"
@@ -156,7 +149,6 @@ function DocOnboard() {
                                 getOptionLabel={(option) => option.toString()}
                                 sx={{ width: 400 }}
                                 renderInput={(params) => <TextField {...params}
-                                    required
                                     fullWidth
                                     id="timeslots"
                                     name="timeslots"
@@ -176,7 +168,6 @@ function DocOnboard() {
                                 getOptionLabel={(option) => option.toString()}
                                 sx={{ width: 400 }}
                                 renderInput={(params) => <TextField {...params}
-                                    required
                                     fullWidth
                                     id="days"
                                     name="days"
@@ -193,8 +184,9 @@ function DocOnboard() {
                         fullWidth
                         variant="contained"
                         sx={{ mt: 3, mb: 2 }}
+                        color="success"
                     >
-                        Register
+                        ONBOARD
                     </Button>
                 </Box>
             </div>

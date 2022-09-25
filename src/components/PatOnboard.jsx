@@ -56,7 +56,7 @@ function PatOnboard() {
             headers: {
                 "Authorization": `Bearer ${token}`
             },
-            body: onboardDoc,
+            body: onboardPat,
         })
             .catch(error => {
                 window.alert(error);

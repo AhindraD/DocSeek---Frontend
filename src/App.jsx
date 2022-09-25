@@ -14,10 +14,6 @@ function App() {
   let [token, setToken] = useState(null);
   let [refreshToken, setRefreshToken] = useState(null);
   let [role, setRole] = useState("patient");//"doctor","patient"
-  // let [quizArr, setQuizArr] = useState([]);
-  // let [room, setRoom] = useState(null);
-  // let [studentProfile, setStudentProfile] = useState({});
-  // let [reportArr, setReportArr] = useState([]);
 
   function logout() {
     setUser(null);

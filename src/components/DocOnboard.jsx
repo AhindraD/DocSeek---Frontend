@@ -64,8 +64,8 @@ function DocOnboard() {
             country: data.get('country'),
             image: selectedImage,
         };
-        console.log(onboardDoc)
-        /*
+        //console.log(onboardDoc)
+        ///*
         await fetch("http://localhost:8000/doctor/onboard", {
             method: "POST",
             headers: {
@@ -81,7 +81,7 @@ function DocOnboard() {
         //console.log(timeSlots);
         console.log("submit");
         navigate("/doctor/home");
-        */
+        //*/
     };
 
     return (

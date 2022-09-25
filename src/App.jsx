@@ -7,6 +7,12 @@ import { useState } from 'react';
 import Home from './components/Home';
 import DocOnboard from './components/DocOnboard';
 import PatOnboard from './components/PatOnboard';
+import PatHome from './components/PatHome';
+import PatAppoints from './components/PatAppoints';
+import BookFill from './components/BookFill';
+import BookConfirm from './components/BookConfirm';
+import DocHome from './components/DocHome';
+import DocAppoints from './components/DocAppoints';
 
 function App() {
   const goTo = useNavigate();
@@ -35,13 +41,13 @@ function App() {
           <Route path='/doctor/onboard' element={<DocOnboard />} />
           <Route path='/patient/onboard' element={<PatOnboard/>} />
 
-          <Route path='/patient/home' element={<Home />} />
-          <Route path='/patient/home/:docID' element={<Home />} />
-          <Route path='/patient/booknow' element={<Home />} />
-          <Route path='/patient/appoints' element={<Home />} />
+          <Route path='/patient/home' element={<PatHome/>} />
+          <Route path='/patient/home/:docID' element={<PatAppoints/>} />
+          <Route path='/patient/booknow' element={<BookFill/>} />
+          <Route path='/patient/appoints' element={<BookConfirm/>} />
 
-          <Route path='/doctor/home' element={<Home />} />
-          <Route path='/doctor/home/:appointID' element={<Home />} />
+          <Route path='/doctor/home' element={<DocHome/>} />
+          <Route path='/doctor/home/:appointID' element={<DocAppoints/>} />
         </Routes>
       </div >
     </UserContext.Provider>

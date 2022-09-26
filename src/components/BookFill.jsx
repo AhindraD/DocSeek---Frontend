@@ -99,6 +99,7 @@ function BookFill() {
                             </div>
                             <button className='book-bttn' onClick={() => bookNow()}>Book</button>
                         </div>
+
                         <div className="row2">
                             <p className="chosen-day">{value.toDateString()}, Availability:</p>
                             <div className="all-slots">
@@ -112,6 +113,28 @@ function BookFill() {
                                         </div>
                                     )
                                 })}
+                            </div>
+                        </div>
+
+                        <div className="row3">
+                            <p className="invoice">INVOICE</p>
+                            <div className="invoice-cont">
+                                <div className="invoice1">
+                                    <p>Doctor's Fee :</p>
+                                    <p> ${doc.fee}</p>
+                                </div>
+                                <div className="invoice2">
+                                    <p>Platform Fee : </p>
+                                    <p> ${1.99}</p>
+                                </div>
+                                <div className="invoice2">
+                                    <p>Service Tax (15%) : </p>
+                                    <p> ${((Number(doc.fee) + 1.99) * 0.12).toFixed(2)}</p>
+                                </div>
+                                <div className="invoice3">
+                                    <p> <b>Total : </b></p>
+                                    <p><b>${Number(doc.fee) + (1.99) + Number(((Number(doc.fee) + 1.99) * 0.12).toFixed(2))}</b></p>
+                                </div>
                             </div>
                         </div>
                     </div>

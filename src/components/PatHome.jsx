@@ -35,7 +35,7 @@ function PatHome() {
     return (
         <div className='phome-cont'>
             <div className="phome-top">
-                <div className="phome-logo" onClick={() => { navigate("/home") }}>
+                <div className="phome-logo" onClick={() => { navigate(`/${role}/home`) }}>
                     DocSeek
                 </div>
                 <button className='logout-bttn' onClick={() => logout()}>Logout</button>

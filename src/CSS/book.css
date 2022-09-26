@@ -92,6 +92,7 @@
 
 .row2 {
     padding: 30px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.23);
 }
 
 .chosen-day {
@@ -126,4 +127,39 @@
 .selected-box {
     background-color: rgb(153, 255, 199);
     border: 2px solid #043a31;
+}
+
+.row3 {
+    padding: 30px;
+}
+
+.invoice {
+    text-decoration: underline;
+}
+
+.invoice-cont {
+    height: 120px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.invoice1,
+.invoice2,
+.invoice3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    width: 500px;
+    padding: 0 50px;
+}
+
+.invoice3 {
+    border-top: 2px solid #043a31;
+}
+
+.invoice3 b {
+    color: #043a31;
+    font-size: 21px;
 }

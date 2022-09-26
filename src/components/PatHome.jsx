@@ -4,6 +4,7 @@ import { useEffect, useState, useContext, useRef } from 'react'
 import { UserContext } from "../Contexts/UserContext";
 import axiosClient from '../ApiConfig';
 import { useNavigate } from 'react-router-dom';
+import AiTwotoneStar from "../CSS/star";
 
 function PatHome() {
     let navigate = useNavigate();
@@ -35,8 +36,37 @@ function PatHome() {
                 </div>
                 <button className='logout-bttn' onClick={() => logout()}>Logout</button>
             </div>
+            <div className="doc-search">
+                <div className="search-bar">
+                    <input type="text" placeholder='Doctor Name' />
+                </div>
+                <button className="search-bttn">SEARCH</button>
+            </div>
 
-            {loading ? <h1 style={{ margin: "0 auto" }}>loading...</h1> : ""
+            {loading ? <h1 style={{ margin: "0 auto" }}>loading...</h1> :
+                <div className="phome-bottom">
+                    {docs.map((elem) => {
+                        return (
+                            <div className="doc-ind" key={elem._id}>
+                                <div className="doc-img">
+                                    <img src={elem.imageURL} alt="" />
+                                </div>
+                                <div className="r1">
+                                    <p className="doc-name">{elem.name},</p>
+                                    <p className="doc-qual">{elem.qualification}</p>
+                                </div>
+                                <div className="r1">
+                                    <p className="doc-spec">{elem.speciality},</p>
+                                    <p className="doc-hosp">{elem.hospital}</p>
+                                </div>
+                                <div className="r1">
+                                    <div><AiTwotoneStar /> </div>
+                                    <p className="doc-rating">{elem.rating}</p>
+                                </div>
+                            </div>
+                        )
+                    })}
+                </div>
             }
         </div >
     )

@@ -20,8 +20,9 @@ Estimated time: 28hrs
     25 Sept. 2022 
     20:00 - 22:30: login page with multiple options [2.5]
     --------------
-    24 Sept. 2022
-    19:00 - 23:00: Writing Models in Backend [4]
+    26 Sept. 2022
+    1:00 - 6:00: Onboard done [5]
+    6:00 - 8:00: Patient home [2]
 
 Milestone 2 completed in around  29 hours  00mins.
 

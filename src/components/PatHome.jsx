@@ -4,7 +4,7 @@ import { useEffect, useState, useContext, useRef } from 'react'
 import { UserContext } from "../Contexts/UserContext";
 import axiosClient from '../ApiConfig';
 import { useNavigate } from 'react-router-dom';
-import AiTwotoneStar from "../CSS/star";
+import BsStarFill from "../CSS/star";
 
 function PatHome() {
     let navigate = useNavigate();
@@ -53,15 +53,15 @@ function PatHome() {
                                 </div>
                                 <div className="r1">
                                     <p className="doc-name">{elem.name},</p>
-                                    <p className="doc-qual">{elem.qualification}</p>
+                                    <p className="doc-qual"> <b>{elem.qualification}</b> </p>
                                 </div>
                                 <div className="r1">
                                     <p className="doc-spec">{elem.speciality},</p>
                                     <p className="doc-hosp">{elem.hospital}</p>
                                 </div>
                                 <div className="r1">
-                                    <div><AiTwotoneStar /> </div>
-                                    <p className="doc-rating">{elem.rating}</p>
+                                    <p>Rating:  </p>
+                                    <p className="doc-rating"><BsStarFill /> {elem.rating}</p>
                                 </div>
                             </div>
                         )

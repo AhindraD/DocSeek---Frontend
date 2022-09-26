@@ -23,9 +23,10 @@ Estimated time: 28hrs
     26 Sept. 2022
     1:00 - 6:00: Onboard done [5]
     6:00 - 8:00: Patient home [2]
+    9:00 - 16:00: everything else [7]
 
-Milestone 2 completed in around  29 hours  00mins.
+Milestone 2 completed in around  17 hours  00mins.
 
 ### MISC
 26 Sept. 2022
-12.30 - 16.00: Fixed some bugs and UI issues as per the feedback
+16.00 - 17.00: Fixed some bugs and UI issues as per the feedback [1]

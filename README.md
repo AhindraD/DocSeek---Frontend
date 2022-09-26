@@ -1,6 +1,36 @@
 # DocSeek Web App
 ## Deplyed Here: https://docseek.netlify.app/
 
+### SignUp 
+![](https://github.com/AhindraD/DocSeek---Frontend/blob/master/images/rsz_1signup-login.png?raw=true)
+<br>
+
+### SignUp 
+![](https://github.com/AhindraD/DocSeek---Frontend/blob/master/images/rsz_1signup-login.png?raw=true)
+<br>
+
+### SignUp 
+![](https://github.com/AhindraD/DocSeek---Frontend/blob/master/images/rsz_1signup-login.png?raw=true)
+<br>
+
+### SignUp 
+![](https://github.com/AhindraD/DocSeek---Frontend/blob/master/images/rsz_1signup-login.png?raw=true)
+<br>
+
+### SignUp 
+![](https://github.com/AhindraD/DocSeek---Frontend/blob/master/images/rsz_1signup-login.png?raw=true)
+<br>
+
+### SignUp 
+![](https://github.com/AhindraD/DocSeek---Frontend/blob/master/images/rsz_1signup-login.png?raw=true)
+<br>
+
+### SignUp 
+![](https://github.com/AhindraD/DocSeek---Frontend/blob/master/images/rsz_1signup-login.png?raw=true)
+<br>
+
+
+
 We are a startup based in Silicon Valley and we would like you to build a platform which can connect patients with best doctors from around the world.
 Here are the use cases of the platform we are trying to build:
 - **Ease of Use**: Simple and clean UI which is easy for people from all age groups to use

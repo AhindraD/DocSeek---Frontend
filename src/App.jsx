@@ -4,7 +4,6 @@ import SignUp from './components/Signup';
 import LogIn from './components/Login';
 import { UserContext } from './Contexts/UserContext';
 import { useState } from 'react';
-import Home from './components/Home';
 import DocOnboard from './components/DocOnboard';
 import PatOnboard from './components/PatOnboard';
 import PatHome from './components/PatHome';
@@ -44,11 +43,12 @@ function App() {
 
           <Route path='/patient/home' element={<PatHome />} />
           <Route path='/patient/home/:docID' element={<BookFill />} />
-          <Route path='/patient/booknow' element={<BookConfirm />} />
+          {/* <Route path='/patient/booknow' element={<BookConfirm />} /> */}
           <Route path='/patient/appoints' element={<PatAppoints />} />
 
           <Route path='/doctor/home' element={<DocHome />} />
-          <Route path='/doctor/home/:appointID' element={<DocAppoints />} />
+          <Route path='/doctor/appoints' element={<DocAppoints />} />
+          {/* <Route path='/doctor/home/:appointID' element={<DocAppoints />} /> */}
 
           <Route path='/test' element={<Test />} />
         </Routes>

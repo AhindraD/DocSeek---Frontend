@@ -5,6 +5,7 @@ import { UserContext } from "../Contexts/UserContext";
 import axiosClient from '../ApiConfig';
 import { useNavigate } from 'react-router-dom';
 import BsStarFill from "../CSS/star";
+import AiFillHome from "../CSS/logo";
 
 function PatHome() {
     let navigate = useNavigate();
@@ -36,9 +37,12 @@ function PatHome() {
         <div className='phome-cont'>
             <div className="phome-top">
                 <div className="phome-logo" onClick={() => { navigate(`/${role}/home`) }}>
-                    DocSeek
+                    DocSeek<AiFillHome />
                 </div>
-                <button className='logout-bttn' onClick={() => logout()}>Logout</button>
+                <div className='bttn-cont'>
+                    <button className='appoint-bttn' onClick={() => navigate(`/${role}/appoints`)}>Appointments</button>
+                    <button className='logout-bttn' onClick={() => logout()}>Logout</button>
+                </div>
             </div>
             <div className="doc-search">
                 <div className="search-bar">

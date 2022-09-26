@@ -23,6 +23,9 @@
     font-size: 35px;
     font-weight: 700;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 /* .home-logo img {
@@ -30,6 +33,23 @@
     height: 100%;
     object-fit: cover;
 } */
+.bttn-cont {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.appoint-bttn {
+    padding: 3px 50px;
+    color: #043a31;
+    background-color: rgb(164, 255, 247);
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 0px rgb(158, 158, 158);
+    transition: all 300ms ease;
+}
 
 .logout-bttn,
 .search-bttn {
@@ -45,7 +65,8 @@
     transition: all 300ms ease;
 }
 
-.logout-bttn:hover {
+.logout-bttn:hover,
+.appoint-bttn:hover {
     box-shadow: 1px 1px 0 0px rgb(158, 158, 158);
 }
 

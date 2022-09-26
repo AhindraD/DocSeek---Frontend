@@ -38,7 +38,7 @@ function PatHome() {
             </div>
             <div className="doc-search">
                 <div className="search-bar">
-                    <input type="text" placeholder='Doctor Name' />
+                    <input type="text" placeholder='Find Doctor' />
                 </div>
                 <button className="search-bttn">SEARCH</button>
             </div>

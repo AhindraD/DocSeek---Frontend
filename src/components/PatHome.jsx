@@ -28,6 +28,10 @@ function PatHome() {
         setLoading(false);
     }
 
+    function chooseDoc(docID) {
+        navigate(`/patient/home/${docID}`);
+    }
+
     return (
         <div className='phome-cont'>
             <div className="phome-top">
@@ -38,7 +42,7 @@ function PatHome() {
             </div>
             <div className="doc-search">
                 <div className="search-bar">
-                    <input type="text" placeholder='Find Doctor' />
+                    <input type="text" placeholder='Find Doctors Nearby' />
                 </div>
                 <button className="search-bttn">SEARCH</button>
             </div>
@@ -46,8 +50,11 @@ function PatHome() {
             {loading ? <h1 style={{ margin: "0 auto" }}>loading...</h1> :
                 <div className="phome-bottom">
                     {docs.map((elem) => {
+                        if (elem.hospital == undefined) {
+                            return;
+                        }
                         return (
-                            <div className="doc-ind" key={elem._id}>
+                            <div className="doc-ind" key={elem._id} onClick={() => chooseDoc(elem._id)}>
                                 <div className="doc-img">
                                     <img src={elem.imageURL} alt="" />
                                 </div>
@@ -62,6 +69,10 @@ function PatHome() {
                                 <div className="r1">
                                     <p>Rating:  </p>
                                     <p className="doc-rating"><BsStarFill /> {elem.rating}</p>
+                                </div>
+                                <div className="r1">
+                                    <p>Fees:  </p>
+                                    <p className="doc-rating">$ {elem.fee}/Session</p>
                                 </div>
                             </div>
                         )

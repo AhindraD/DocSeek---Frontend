@@ -40,17 +40,17 @@ function App() {
           <Route path='/signup' element={<SignUp />} />
           <Route path='/login' element={<LogIn />} />
           <Route path='/doctor/onboard' element={<DocOnboard />} />
-          <Route path='/patient/onboard' element={<PatOnboard/>} />
+          <Route path='/patient/onboard' element={<PatOnboard />} />
 
-          <Route path='/patient/home' element={<PatHome/>} />
-          <Route path='/patient/home/:docID' element={<PatAppoints/>} />
-          <Route path='/patient/booknow' element={<BookFill/>} />
-          <Route path='/patient/appoints' element={<BookConfirm/>} />
+          <Route path='/patient/home' element={<PatHome />} />
+          <Route path='/patient/home/:docID' element={<BookFill />} />
+          <Route path='/patient/booknow' element={<BookConfirm />} />
+          <Route path='/patient/appoints' element={<PatAppoints />} />
 
-          <Route path='/doctor/home' element={<DocHome/>} />
-          <Route path='/doctor/home/:appointID' element={<DocAppoints/>} />
+          <Route path='/doctor/home' element={<DocHome />} />
+          <Route path='/doctor/home/:appointID' element={<DocAppoints />} />
 
-          <Route path='/test' element={<Test/>} />
+          <Route path='/test' element={<Test />} />
         </Routes>
       </div >
     </UserContext.Provider>

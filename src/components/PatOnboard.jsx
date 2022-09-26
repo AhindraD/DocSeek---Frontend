@@ -50,18 +50,27 @@ function PatOnboard() {
             country: data.get('country'),
         };
         //console.log(onboardPat);
-
-        await fetch("http://localhost:8000/patient/onboard", {
+        data.append("email", user.email);
+        data.append("conditions", JSON.stringify(conditions));
+        data.append("lookingfor", JSON.stringify(lookingfor));
+        data.append("image", selectedImage);
+        
+        let response = await fetch("http://localhost:8000/patient/onboard", {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${token}`
             },
-            body: onboardPat,
+            body: data,
         })
             .catch(error => {
                 window.alert(error);
                 return;
             });
+        let respData = await response.json();
+        if (respData.error != undefined) {
+            window.alert(respData.error);
+            return;
+        }
         console.log("submit");
         navigate("/patient/home");
     };

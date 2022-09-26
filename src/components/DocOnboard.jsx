@@ -12,7 +12,7 @@ import Stack from '@mui/material/Stack';
 
 import React from 'react'
 import "../CSS/onboard.css"
-import { useEffect, useState, useContext,useRef } from 'react'
+import { useEffect, useState, useContext, useRef } from 'react'
 import { UserContext } from "../Contexts/UserContext";
 import axiosClient from '../ApiConfig';
 import { useNavigate } from 'react-router-dom';
@@ -33,7 +33,7 @@ function DocOnboard() {
     let { user, setUser, token, setToken, refreshToken, setRefreshToken, logout, role, setRole } = useContext(UserContext);
     let [loading, setLoading] = useState(true);
     let [timeSlots, setTimeSlots] = useState([]);
-    let [days, setDays] = useState([]);
+    let [daysA, setDaysA] = useState([]);
 
     const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
     const TIME_SLOTS = ["9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30",
@@ -52,9 +52,9 @@ function DocOnboard() {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
         let onboardDoc = {
-            email: "ahindra@mail.com",//user.email
+            email: "david@mail.com",//user.email
             time: timeSlots,
-            days: days,
+            days: daysA,
             qualification: data.get('qualification'),
             speciality: data.get('speciality'),
             hospital: data.get('hospital'),
@@ -65,18 +65,29 @@ function DocOnboard() {
             image: selectedImage,
         };
         //console.log(onboardDoc)
+        //console.log(days);
+        //console.log(timeSlots);
+        data.append("email", "david@mail.com");//user.email
+        data.append("time", JSON.stringify(timeSlots));
+        data.append("days", JSON.stringify(daysA));
+        data.append("image", selectedImage);
         ///*
-        await fetch("http://localhost:8000/doctor/onboard", {
+        let response = await fetch("http://localhost:8000/doctor/onboard", {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${token}`
             },
-            body: onboardDoc,
+            body: data,
         })
             .catch(error => {
                 window.alert(error);
                 return;
             });
+        let respData = await response.json();
+        if (respData.error != undefined) {
+            window.alert(respData.error);
+            return;
+        }
         //console.log(days);
         //console.log(timeSlots);
         console.log("submit");
@@ -98,10 +109,10 @@ function DocOnboard() {
                         <Stack direction="row" alignItems="center" spacing={1}>
                             <Button variant="contained" component="label" color="success">
                                 Upload Image
-                                <input hidden accept="image/*" type="file" onChange={imageChange} id="image"/>
+                                <input hidden accept="image/*" type="file" onChange={imageChange} id="image" />
                             </Button>
                             <IconButton color="success" aria-label="upload picture" component="label">
-                                <input hidden accept="image/*" type="file" onChange={imageChange} id="image"/>
+                                <input hidden accept="image/*" type="file" onChange={imageChange} id="image" />
                                 <PhotoCamera />
                             </IconButton>
                         </Stack>
@@ -217,12 +228,12 @@ function DocOnboard() {
                                 sx={{ width: 400 }}
                                 renderInput={(params) => <TextField {...params}
                                     fullWidth
-                                    id="days"
-                                    name="days"
+                                    id="Days"
+                                    name="Days"
                                     label="Days Available" />}
                                 onChange={(event, newValue) => {
                                     //console.log(newValue);
-                                    setDays(newValue);
+                                    setDaysA(newValue);
                                 }}
                             />
                         </Grid>

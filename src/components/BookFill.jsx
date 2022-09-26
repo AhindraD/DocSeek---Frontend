@@ -48,7 +48,7 @@ function BookFill() {
             },
             body: JSON.stringify({
                 "doctor": docID,
-                "patient": "632f931f31c089350a524ac4",
+                "patient": user._id,
                 "date": value.toLocaleDateString(),
                 "time": slot,
                 "prenote": preNote,

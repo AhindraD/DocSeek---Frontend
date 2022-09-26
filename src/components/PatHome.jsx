@@ -10,7 +10,7 @@ function PatHome() {
     let navigate = useNavigate();
     let { user, setUser, token, setToken, refreshToken, setRefreshToken, logout, role, setRole } = useContext(UserContext);
     let [loading, setLoading] = useState(true);
-    let [docs, setDocs] = useState(true);
+    let [docs, setDocs] = useState([]);
 
     useEffect(() => {
         if (user == null) {

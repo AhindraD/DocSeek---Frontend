@@ -13,6 +13,40 @@ function DocAppoints() {
     let [loading, setLoading] = useState(true);
     let [appoints, setAppoints] = useState([]);//"upcoming","completed","cancelled"
 
+    let [showCard, setShowCard] = useState(false);
+    let [presciption, setPresciption] = useState("");
+    let [appointID, setAppointID] = useState("");
+
+    function toggleCard() {
+        setShowCard((prev) => !prev);
+    }
+    async function markDone() {
+        let response = await fetch(`http://localhost:8000/appoint/complete/${appointID}`, {
+            method: "POST",
+            headers: {
+                "Authorization": `Bearer ${token}`,
+                "Content-Type": "application/json",
+            },
+            body:JSON.stringify( {
+                "presciption": presciption
+            }),
+        })
+            .catch(error => {
+                window.alert(error);
+                return;
+            });
+        let respData = await response.json();
+        if (respData.error != undefined) {
+            window.alert(respData.error);
+            return;
+        } else {
+            window.alert("Appointment Completed!");
+        }
+        toggleCard();
+        fetchData();
+        setPresciption(() => "")
+    }
+
     useEffect(() => {
         if (user == null) {
             setUser(() => JSON.parse(localStorage.getItem("user_data")));
@@ -63,9 +97,12 @@ function DocAppoints() {
                                                 <div className="up-c3r1">Time: {elem.time}</div>
                                                 <div className="up-c3r2">Date: {elem.date}</div>
                                             </div>
-                                            <button className='done-appoint'>Done</button>
+                                            <button className='done-appoint' onClick={() => {
+                                                setAppointID(() => elem._id);
+                                                toggleCard();
+                                            }}>Done</button>
                                         </div>
-                                        
+
                                     )
                                 })}
                             </div>
@@ -88,7 +125,7 @@ function DocAppoints() {
                                                 <div className="up-c3r1">Time: {elem.time}</div>
                                                 <div className="up-c3r2">Date: {elem.date}</div>
                                             </div>
-                                            
+
                                         </div>
                                     )
                                 })}
@@ -97,7 +134,23 @@ function DocAppoints() {
                     </div>
             }
 
-        </div>
+            <div className={`overlay ${showCard ? "visible" : ""}`}>
+                <div className="add-card">
+                    <div className="close">
+                        <button className='close-bttn' onClick={() => toggleCard()}>close</button>
+                    </div>
+                    <div className="sub-create">
+                        <div className="sub-name">
+                            <input type="text" placeholder='Write presciption' value={presciption} onChange={(e) => { setPresciption(() => e.target.value) }} />
+                        </div>
+                        <button className='done-appoint' onClick={() => {
+                            markDone();
+                        }}>DONE</button>
+                    </div>
+                </div>
+            </div>
+
+        </div >
     )
 }
 

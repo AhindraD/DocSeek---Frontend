@@ -85,3 +85,89 @@
     border-radius: 3px;
     cursor: pointer;
 }
+
+
+
+
+
+
+
+
+
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.726);
+    position: absolute;
+    top: 0;
+    left: -100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    /* */
+}
+
+.visible {
+    left: 0;
+}
+
+.add-card {
+    width: 500px;
+    height: 300px;
+    border-radius: 11px;
+    background-color: white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.close {
+    width: 100%;
+    height: 50px;
+    background-color: #043a31;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.close-bttn {
+    padding: 1px 13px;
+    color:#043a31;
+    font-weight: 600;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px 2px 0px 0 rgba(0, 0, 0, 0.285);
+}
+
+.sub-create {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: #ececec;
+}
+
+.sub-name {
+    width: 230px;
+    height: 33px;
+}
+
+.sub-name input {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    border: 2px solid rgb(206, 206, 206);
+    padding: 0 40px;
+    font-size: 17px;
+
+    font-weight: 600;
+}

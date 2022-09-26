@@ -43,15 +43,16 @@ function BookFill() {
         let response = await fetch("http://localhost:8000/appoint/new", {
             method: "POST",
             headers: {
-                "Authorization": `Bearer ${token}`
+                "Authorization": `Bearer ${token}`,
+                "Content-Type": "application/json",
             },
-            body: {
+            body: JSON.stringify({
                 "doctor": docID,
-                "patient": user._id,
+                "patient": "632f931f31c089350a524ac4",
                 "date": value.toLocaleDateString(),
                 "time": slot,
                 "prenote": preNote,
-            },
+            }),
         })
             .catch(error => {
                 window.alert(error);

@@ -37,14 +37,40 @@ function BookFill() {
         setLoading(false);
     }
 
-    function bookNow() {
+    async function bookNow() {
         //console.log(value.getDay());//Mon Sep 26 2022 10:13:32 GMT+0530 (India Standard Time)
+        let response = await fetch("http://localhost:8000/appoint/new", {
+            method: "POST",
+            headers: {
+                "Authorization": `Bearer ${token}`
+            },
+            body: {
+                "doctor": docID,
+                "patient": user._id,
+                "date": value.toLocaleDateString(),
+                "time": slot,
+                "prenote": preNote,
+            },
+        })
+            .catch(error => {
+                window.alert(error);
+                return;
+            });
+        let respData = await response.json();
+        if (respData.error != undefined) {
+            window.alert(respData.error);
+            return;
+        } else {
+            window.alert("Booking Successful!");
+        }
+        console.log("submit");
+        navigate("/patient/home");
     }
 
     return (
         <div className='book-cont'>
             <div className="phome-top">
-                <div className="phome-logo" onClick={() => { navigate("/home") }}>
+                <div className="phome-logo" onClick={() => { navigate(`/${role}/home`) }}>
                     DocSeek
                 </div>
                 <button className='logout-bttn' onClick={() => logout()}>Logout</button>

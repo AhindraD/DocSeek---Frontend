@@ -5,28 +5,28 @@
 ![](https://github.com/AhindraD/DocSeek---Frontend/blob/master/images/rsz_1signup-login.png?raw=true)
 <br>
 
-### SignUp 
-![](https://github.com/AhindraD/DocSeek---Frontend/blob/master/images/rsz_1signup-login.png?raw=true)
+### DOCTOR OnBoard
+![](https://github.com/AhindraD/DocSeek---Frontend/blob/master/images/rsz_11doctor-onboard.png?raw=true)
 <br>
 
-### SignUp 
-![](https://github.com/AhindraD/DocSeek---Frontend/blob/master/images/rsz_1signup-login.png?raw=true)
+### DOCTOR Home
+![](https://github.com/AhindraD/DocSeek---Frontend/blob/master/images/rsz_1doctor-home.png?raw=true)
 <br>
 
-### SignUp 
-![](https://github.com/AhindraD/DocSeek---Frontend/blob/master/images/rsz_1signup-login.png?raw=true)
+### DOCTOR Appoints
+![](https://github.com/AhindraD/DocSeek---Frontend/blob/master/images/rsz_1doctor-appointment.png?raw=true)
 <br>
 
-### SignUp 
-![](https://github.com/AhindraD/DocSeek---Frontend/blob/master/images/rsz_1signup-login.png?raw=true)
+### PATIENT Home
+![](https://github.com/AhindraD/DocSeek---Frontend/blob/master/images/rsz_1patient-home.png?raw=true)
 <br>
 
-### SignUp 
-![](https://github.com/AhindraD/DocSeek---Frontend/blob/master/images/rsz_1signup-login.png?raw=true)
+### PATIENT Booking
+![](https://github.com/AhindraD/DocSeek---Frontend/blob/master/images/rsz_1patient-book-appointment.png?raw=true)
 <br>
 
-### SignUp 
-![](https://github.com/AhindraD/DocSeek---Frontend/blob/master/images/rsz_1signup-login.png?raw=true)
+### PATIENT Appoints
+![](https://github.com/AhindraD/DocSeek---Frontend/blob/master/images/rsz_patient-appointment.png?raw=true)
 <br>
 
 

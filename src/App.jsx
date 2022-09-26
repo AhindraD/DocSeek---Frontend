@@ -12,7 +12,6 @@ import BookFill from './components/BookFill';
 import BookConfirm from './components/BookConfirm';
 import DocHome from './components/DocHome';
 import DocAppoints from './components/DocAppoints';
-import Test from './components/Test';
 
 function App() {
   const goTo = useNavigate();
@@ -49,8 +48,6 @@ function App() {
           <Route path='/doctor/home' element={<DocHome />} />
           <Route path='/doctor/appoints' element={<DocAppoints />} />
           {/* <Route path='/doctor/home/:appointID' element={<DocAppoints />} /> */}
-
-          <Route path='/test' element={<Test />} />
         </Routes>
       </div >
     </UserContext.Provider>

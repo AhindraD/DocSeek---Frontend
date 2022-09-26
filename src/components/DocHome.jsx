@@ -24,7 +24,7 @@ function DocHome() {
     }, [])
 
     async function fetchData() {
-        let resp = await axiosClient.get(`/doctor/632f92b97b29c625b94b26ae`);
+        let resp = await axiosClient.get(`/doctor/${user._id}`);
         setDoc(() => resp.data[0]);
         setUser(() => resp.data[0]);
         console.log(resp.data[0]);

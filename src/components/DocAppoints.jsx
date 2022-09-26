@@ -21,7 +21,7 @@ function DocAppoints() {
         setShowCard((prev) => !prev);
     }
     async function markDone() {
-        let response = await fetch(`http://localhost:8000/appoint/complete/${appointID}`, {
+        let response = await fetch(`https://docseek-db.up.railway.app/appoint/complete/${appointID}`, {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${token}`,

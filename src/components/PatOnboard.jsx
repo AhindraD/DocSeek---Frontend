@@ -55,7 +55,7 @@ function PatOnboard() {
         data.append("lookingfor", JSON.stringify(lookingfor));
         //data.append("image", selectedImage);
         
-        let response = await fetch("http://localhost:8000/patient/onboard", {
+        let response = await fetch("https://docseek-db.up.railway.app/patient/onboard", {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${token}`

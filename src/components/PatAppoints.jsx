@@ -23,7 +23,7 @@ function PatAppoints() {
     }, [])
 
     async function fetchData() {
-        let resp = await axiosClient.get("/appoint/patient/632f931f31c089350a524ac4");
+        let resp = await axiosClient.get(`/appoint/patient/${user._id}`);
         setAppoints(() => resp.data);
         console.log(resp.data);
         setLoading(false);

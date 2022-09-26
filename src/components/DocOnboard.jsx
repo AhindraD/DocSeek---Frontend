@@ -71,7 +71,7 @@ function DocOnboard() {
         data.append("days", JSON.stringify(daysA));
         data.append("image", selectedImage);
         ///*
-        let response = await fetch("http://localhost:8000/doctor/onboard", {
+        let response = await fetch("https://docseek-db.up.railway.app/doctor/onboard", {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${token}`

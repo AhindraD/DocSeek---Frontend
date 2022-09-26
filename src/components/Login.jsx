@@ -17,7 +17,7 @@ export default function LogIn() {
             password,
         };
         //console.log(userInfo);
-        let response = await fetch(`http://localhost:8000/${role}/auth/login`, {
+        let response = await fetch(`http://localhost:8000/auth/${role}/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

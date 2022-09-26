@@ -57,7 +57,7 @@ function DocAppoints() {
     }, [])
 
     async function fetchData() {
-        let resp = await axiosClient.get("/appoint/doctor/632f92b97b29c625b94b26ae");
+        let resp = await axiosClient.get(`/appoint/doctor/${user._id}`);
         setAppoints(() => resp.data);
         console.log(resp.data);
         setLoading(false);

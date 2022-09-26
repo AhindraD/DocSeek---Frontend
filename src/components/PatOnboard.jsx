@@ -53,7 +53,7 @@ function PatOnboard() {
         data.append("email", user.email);
         data.append("conditions", JSON.stringify(conditions));
         data.append("lookingfor", JSON.stringify(lookingfor));
-        data.append("image", selectedImage);
+        //data.append("image", selectedImage);
         
         let response = await fetch("http://localhost:8000/patient/onboard", {
             method: "POST",

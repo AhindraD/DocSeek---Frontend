@@ -52,7 +52,7 @@ function DocOnboard() {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
         let onboardDoc = {
-            email: "david@mail.com",//user.email
+            email: user.email,//user.email
             time: timeSlots,
             days: daysA,
             qualification: data.get('qualification'),
@@ -67,7 +67,7 @@ function DocOnboard() {
         //console.log(onboardDoc)
         //console.log(days);
         //console.log(timeSlots);
-        data.append("email", "david@mail.com");//user.email
+        data.append("email", user.email);//user.email
         data.append("time", JSON.stringify(timeSlots));
         data.append("days", JSON.stringify(daysA));
         data.append("image", selectedImage);

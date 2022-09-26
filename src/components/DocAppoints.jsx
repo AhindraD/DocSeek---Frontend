@@ -51,7 +51,7 @@ function DocAppoints() {
                                 {appoints.map((elem, i) => {
                                     if (elem.status !== "upcoming") { return }
                                     return (
-                                        <div className="up-ind">
+                                        <div className="up-ind" key={i}>
                                             <div className="up-c1">
                                                 <img src={elem.patient.imageURL} alt="" />
                                             </div>
@@ -76,7 +76,7 @@ function DocAppoints() {
                                 {appoints.map((elem, i) => {
                                     if (elem.status !== "completed") { return }
                                     return (
-                                        <div className="com-ind">
+                                        <div className="com-ind" key={i}>
                                             <div className="up-c1">
                                                 <img src={elem.patient.imageURL} alt="" />
                                             </div>

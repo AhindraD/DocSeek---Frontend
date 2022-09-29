@@ -85,6 +85,6 @@ After meeting is marked as done from Doctor's side, the patient can then give ra
 ### Tech Stack
 - React
 - Express
-- PostgreSQL
+- MongoDB
 
 ### Stretch: Integrate WebRTC to allow the calls on the platform itself.

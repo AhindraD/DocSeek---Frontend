@@ -40,7 +40,7 @@ function BookFill() {
 
     async function bookNow() {
         //console.log(value.getDay());//Mon Sep 26 2022 10:13:32 GMT+0530 (India Standard Time)
-        let response = await fetch("https://docseek-db.up.railway.app/appoint/new", {
+        let response = await fetch("https://docseek.onrender.com/appoint/new", {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${token}`,

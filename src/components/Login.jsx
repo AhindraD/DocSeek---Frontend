@@ -17,7 +17,7 @@ export default function LogIn() {
             password,
         };
         //console.log(userInfo);
-        let response = await fetch(`https://docseek-db.up.railway.app/auth/${role}/login`, {
+        let response = await fetch(`https://docseek.onrender.com/auth/${role}/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

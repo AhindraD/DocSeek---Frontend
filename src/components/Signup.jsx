@@ -20,7 +20,7 @@ export default function SignUp() {
             password,
             confirmPassword,
         };
-        let response = await fetch(`https://docseek-db.up.railway.app/auth/${role}/signup`, {
+        let response = await fetch(`https://docseek.onrender.com/auth/${role}/signup`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

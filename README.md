@@ -1,6 +1,9 @@
 # DocSeek Web App
 ## Deplyed Here: https://docseek.netlify.app/
 
+## Backend Deployed: https://docseek-db.up.railway.app/ || https://docseek.onrender.com/
+## Backend Resp: https://github.com/AhindraD/DocSeek---Backend---DB
+
 ### SignUp 
 ![](https://github.com/AhindraD/DocSeek---Frontend/blob/master/images/rsz_1signup-login.png?raw=true)
 <br>
@@ -82,6 +85,6 @@ After meeting is marked as done from Doctor's side, the patient can then give ra
 ### Tech Stack
 - React
 - Express
-- PostgreSQL
+- MongoDB
 
 ### Stretch: Integrate WebRTC to allow the calls on the platform itself.

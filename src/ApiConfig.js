@@ -1,11 +1,7 @@
 import axios from "axios";
 
 const axiosClient = axios.create({
-<<<<<<< HEAD
     baseURL: "https://docseek.onrender.com/",//"http://localhost:8000/",//"https://docseek-db.up.railway.app/",//https://docseek.onrender.com
-=======
-    baseURL: "https://docseek.onrender.com/",//"http://localhost:8000/",//"https://docseek-db.up.railway.app/",
->>>>>>> 4d4b6964841bfacbc0ee953a817cb9c6b6643ade
 })
 
 axiosClient.interceptors.request.use(

@@ -1,7 +1,7 @@
 # DocSeek Web App
 ## Deplyed Here: https://docseek.netlify.app/
 
-## Backend Deployed: https://docseek-db.up.railway.app/
+## Backend Deployed: https://docseek-db.up.railway.app/ || https://docseek.onrender.com/
 ## Backend Resp: https://github.com/AhindraD/DocSeek---Backend---DB
 
 ### SignUp 

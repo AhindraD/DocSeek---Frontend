@@ -5,15 +5,15 @@
 ## Backend Resp: https://github.com/AhindraD/DocSeek---Backend---DB
 
 ### SignUp 
-![](https://github.com/AhindraD/DocSeek---Frontend/blob/master/images/rsz_1signup-login.png?raw=true)
+![rsz_1signup-login](https://user-images.githubusercontent.com/83480142/206700003-2324dd20-8987-4b12-b1de-7980e981e88a.png)
 <br>
 
 ### DOCTOR OnBoard
-![](https://github.com/AhindraD/DocSeek---Frontend/blob/master/images/rsz_11doctor-onboard.png?raw=true)
+![rsz_11doctor-onboard](https://user-images.githubusercontent.com/83480142/206700908-819a1179-1423-4a8d-9956-01e3d18d60cd.png)
 <br>
 
 ### DOCTOR Home
-![](https://github.com/AhindraD/DocSeek---Frontend/blob/master/images/rsz_1doctor-home.png?raw=true)
+![rsz_1doctor-home](https://user-images.githubusercontent.com/83480142/206700128-388dfcd7-4faa-4f98-939b-69043fbb2a16.png)
 <br>
 
 ### DOCTOR Appoints
@@ -21,11 +21,11 @@
 <br>
 
 ### PATIENT Home
-![](https://github.com/AhindraD/DocSeek---Frontend/blob/master/images/rsz_1patient-home.png?raw=true)
+![rsz_1patient-home](https://user-images.githubusercontent.com/83480142/206700018-c8299c47-2c40-4b78-b76f-01bd81efdc81.png)
 <br>
 
 ### PATIENT Booking
-![](https://github.com/AhindraD/DocSeek---Frontend/blob/master/images/rsz_1patient-book-appointment.png?raw=true)
+![rsz_1patient-book-appointment](https://user-images.githubusercontent.com/83480142/206700107-1eecb835-3bc8-4fc0-a8de-d8d962a599b3.png)
 <br>
 
 ### PATIENT Appoints
